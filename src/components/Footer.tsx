@@ -58,10 +58,10 @@ export default function Footer() {
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
-                href="https://www.facebook.com/babacaterers"
+                href="https://www.facebook.com/share/1Be9pcq7Kh/"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackExternalLink('https://www.facebook.com/babacaterers', 'Facebook')}
+                onClick={() => trackExternalLink('https://www.facebook.com/share/1Be9pcq7Kh/', 'Facebook')}
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all"
                 aria-label="Facebook"
               >
@@ -99,10 +99,10 @@ export default function Footer() {
               <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-red-500 fill-current" />
               <span>by</span>
               <a
-                href="https://asgerali.vercel.app/"
+                href="https://www.instagram.com/asgerali5656/"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackExternalLink('https://asgerali.vercel.app/', 'Developer')}
+                onClick={() => trackExternalLink('https://www.instagram.com/asgerali5656/', 'Developer')}
                 className="text-primary font-medium hover:underline"
               >
                 Asger Ali
