@@ -8,6 +8,7 @@ import mavaRollImage from '@/assets/dish-mava-roll.jpg';
 import modernRollImage from '@/assets/dish-modern-roll.jpg';
 import maharajaRollImage from '@/assets/dish-maharaja-roll.jpg';
 import juicesImage from '@/assets/dish-juices.jpg';
+import { trackButtonClick, trackImageClick, trackExternalLink } from '@/lib/analytics';
 
 const dishes = [
   {
@@ -54,10 +55,10 @@ const dishes = [
 
 export default function Menu() {
   return (
-    <section id="menu" className="py-24 relative overflow-hidden">
+    <section id="menu" className="py-16 sm:py-24 relative overflow-hidden">
       {/* Decorative Background */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-48 sm:w-96 h-48 sm:h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-48 sm:w-96 h-48 sm:h-96 bg-accent/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -65,19 +66,19 @@ export default function Menu() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <span className="text-primary font-medium tracking-[0.2em] text-sm uppercase">Our Specialties</span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-4">
+          <span className="text-primary font-medium tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm uppercase">Our Specialties</span>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4 mb-3 sm:mb-4">
             Shaadi Ke Superstar Dishes
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-4">
             Har bite mein mohabbat ka zaika
           </p>
         </motion.div>
 
         {/* Dishes Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-8 sm:mb-12">
           {dishes.map((dish, index) => (
             <motion.div
               key={index}
@@ -85,7 +86,8 @@ export default function Menu() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500"
+              onClick={() => trackImageClick(dish.name, 'Menu')}
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500 cursor-pointer"
             >
               <div className="aspect-square overflow-hidden">
                 <img
@@ -95,11 +97,11 @@ export default function Menu() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-display text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6">
+                <h3 className="font-display text-sm sm:text-lg font-semibold mb-0.5 sm:mb-1 group-hover:text-primary transition-colors line-clamp-1">
                   {dish.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
                   {dish.description}
                 </p>
               </div>
@@ -119,10 +121,14 @@ export default function Menu() {
             href="https://babacaterersmenu.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            onClick={() => {
+              trackButtonClick('View Complete Menu', 'Menu');
+              trackExternalLink('https://babacaterersmenu.vercel.app/', 'Complete Menu');
+            }}
+            className="inline-flex items-center gap-2 sm:gap-3 bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             View Complete Menu
-            <ExternalLink className="w-5 h-5" />
+            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
         </motion.div>
       </div>
