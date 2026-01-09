@@ -1,30 +1,54 @@
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import seekhImage from '@/assets/dish-seekh.jpg';
-import biryaniImage from '@/assets/dish-biryani.jpg';
-import butterChickenImage from '@/assets/dish-butter-chicken.jpg';
-import paneerImage from '@/assets/dish-paneer.jpg';
+import buffetImage from '@/assets/dish-buffet.jpg';
+import kebabsImage from '@/assets/dish-kebabs.jpg';
+import spreadImage from '@/assets/dish-spread.jpg';
+import jafraniRollImage from '@/assets/dish-jafrani-roll.jpg';
+import mavaRollImage from '@/assets/dish-mava-roll.jpg';
+import modernRollImage from '@/assets/dish-modern-roll.jpg';
+import maharajaRollImage from '@/assets/dish-maharaja-roll.jpg';
+import juicesImage from '@/assets/dish-juices.jpg';
 
 const dishes = [
   {
-    name: 'Mutton Seekh Kebab',
-    description: 'Asli shaahi swad, dhuan aur masalon ka perfect milan',
-    image: seekhImage,
+    name: 'Jafrani Roll',
+    description: 'Mutton seekh wrapped in roomali roti, shaahi swad',
+    image: jafraniRollImage,
   },
   {
-    name: 'Lucknowi Biryani',
-    description: 'Kesar ki khushbu, dum pukht ka jaadu',
-    image: biryaniImage,
+    name: 'Mava Roll',
+    description: 'Sweet mawa delight with nuts and saffron',
+    image: mavaRollImage,
   },
   {
-    name: 'Butter Chicken',
-    description: 'Creamy, rich, ghar jaisa pyaar',
-    image: butterChickenImage,
+    name: 'Modern Roll',
+    description: 'Fusion chicken tikka roll with cheese',
+    image: modernRollImage,
   },
   {
-    name: 'Paneer Tikka',
-    description: 'Tandoori perfection, vegetarian delight',
-    image: paneerImage,
+    name: 'Maharaja Roll',
+    description: 'Royal lamb seekh wrapped in naan, creamy sauce',
+    image: maharajaRollImage,
+  },
+  {
+    name: 'Non-Veg Buffet Spread',
+    description: 'Tandoori chicken, seekh kebabs, chicken tikka aur bahut kuch',
+    image: buffetImage,
+  },
+  {
+    name: 'Starters Collection',
+    description: 'Seekh kebab, chicken tikka, roomali rolls ka collection',
+    image: kebabsImage,
+  },
+  {
+    name: 'Grand Catering Setup',
+    description: 'Wedding style buffet presentation with live counters',
+    image: spreadImage,
+  },
+  {
+    name: 'Fresh Juices & Mocktails',
+    description: '100% natural, refreshing drinks for every guest',
+    image: juicesImage,
   },
 ];
 
